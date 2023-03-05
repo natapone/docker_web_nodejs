@@ -1,11 +1,15 @@
 # docker_web_nodejs
 Docker for quick prototype from node.js
 
+# -- DEV --
+
+
+# -- PROD --
 # Build
-$ docker build -t natapone/node-web-app .
+$ docker build -t node-web-app .
 
 # Run image
-$ docker run -p 40001:8080 -d natapone/node-web-app
+$ docker run -p 40001:40001 -d node-web-app
 
 Running on http://localhost:40001/
 

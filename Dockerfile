@@ -1,11 +1,9 @@
 FROM node:8
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# Copy the package.json and package-lock.json files
 COPY package*.json ./
 
 RUN npm install
@@ -13,7 +11,13 @@ RUN npm install
 # RUN npm install --only=production
 
 # Bundle app source
-COPY . .
+# COPY . .
 
-EXPOSE 8080
+# Copy the server code and configuration file
+COPY server.js ./
+COPY config.json ./
+
+# Expose the app port
+EXPOSE ${PORT}
+
 CMD [ "npm", "start" ]
