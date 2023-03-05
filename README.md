@@ -1,14 +1,19 @@
 # docker_web_nodejs
 Docker for quick prototype from node.js
 
-# -- Build --
-$ docker build -t node-web-app .
 
 # -- DEV Local--
 $ docker compose -f docker-compose.dev.yml up --build
+$ docker compose --verbose -f docker-compose.dev.yml up --build
+
+$ docker compose -f docker-compose.dev.yml up -d --build
+
+$ docker compose -f docker-compose.dev.yml up
+
+# -- Build --
+$ docker build -t node-web-app .
 
 # -- PROD --
-
 
 # Run image - detach
 $ docker run -p 40001:40001 -d node-web-app

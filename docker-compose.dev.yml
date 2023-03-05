@@ -6,6 +6,7 @@ services:
     restart: always
     ports:
       - 40001:40001
-    # volumes:
-    #   - ./app:/app
-    command: node server.js
+    volumes:
+      - ./src:/app/scr
+    command: nodemon ./scr/server.js
+    #command: node ./scr/server.js

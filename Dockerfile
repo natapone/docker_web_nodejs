@@ -7,6 +7,8 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN npm install
+RUN npm install nodemon -g
+
 # If you are building your code for production
 # RUN npm install --only=production
 
@@ -16,7 +18,7 @@ RUN npm install
 # Copy the server code and configuration file
 # COPY server.js ./
 # COPY config.json ./
-COPY ./app /app
+# COPY ./app /app
 
 # Expose the app port
 EXPOSE ${PORT}
