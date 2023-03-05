@@ -14,8 +14,9 @@ RUN npm install
 # COPY . .
 
 # Copy the server code and configuration file
-COPY server.js ./
-COPY config.json ./
+# COPY server.js ./
+# COPY config.json ./
+COPY ./app /app
 
 # Expose the app port
 EXPOSE ${PORT}
