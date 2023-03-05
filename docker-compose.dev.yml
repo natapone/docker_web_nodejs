@@ -2,7 +2,7 @@ services:
 
   node-web-app:
     build: .
-    image: node-web-app
+    # image: node:18-alpine
     restart: always
     ports:
       - 40001:40001
